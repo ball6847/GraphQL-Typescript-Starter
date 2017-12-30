@@ -1,10 +1,11 @@
-const pg = require("pg");
+import * as pg from "pg";
 
 interface InsertQuery {
   text: string;
-  value: any[];
+  values: any[];
 }
 
+// connect to database
 const pool = new pg.Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -13,18 +14,15 @@ const pool = new pg.Pool({
   port: process.env.DB_PORT
 });
 
-async function get(query: string): Promise<any>  {
+// helper function for read operation
+export async function get(query: string): Promise<any> {
   const res = await pool.query(query);
   return res.rows;
 }
 
-async function mutate(query: InsertQuery): Promise<any> {
+// helper function for write operation
+export async function mutate(query: InsertQuery): Promise<any> {
   const res = await pool.query(query);
-  console.log('res', res)
+  console.log("res", res);
   return res.rowCount;
 }
-
-module.exports = {
-  get,
-  mutate
-};

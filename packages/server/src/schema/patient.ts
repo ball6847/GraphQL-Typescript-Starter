@@ -1,5 +1,6 @@
-const Patient = require("../database/patient");
-const uuidv1 = require("uuid/v1");
+import * as uuidv1 from "uuid/v1";
+
+import * as patient from "../database/patient";
 
 export const typeDefs = `
   type Patient {
@@ -21,18 +22,17 @@ export const typeDefs = `
 
 export const resolvers = {
   Query: {
-    allPatients: () => Patient.getAllPatients(),
+    allPatients: () => patient.getAllPatients()
   },
-
   Mutation: {
     createPatient: (_, data) => {
       const newPatient = Object.assign({ id: uuidv1() }, data);
-      Patient.createPatient(newPatient);
+      patient.createPatient(newPatient);
       return newPatient;
     },
     deletePatient: (_, data) => {
-      Patient.deletePatient(data.id);
+      patient.deletePatient(data.id);
       return "SUCCESS";
     }
-  },
+  }
 };
