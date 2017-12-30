@@ -1,5 +1,9 @@
 {
+	"name": "graphql-typescript-starter",
+	"private": true,
 	"devDependencies": {
 		"lerna": "^2.5.1"
-	}
+	},
+	"useWorkspace": true,
+	"version": "0.0.1"
 }
