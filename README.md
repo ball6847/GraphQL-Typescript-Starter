@@ -1,34 +1,36 @@
-# React Node GraphQL TypeScript - Starter Kit
+React Node GraphQL TypeScript - Starter Kit
+==========================================
 
 As I was bootstraping a webapplication I created this starter kit for my use. The technology stack of this kit is collection of all coolatest technologies which I want to use in my web application.
 
-## To get started
+Getting Started
+--------------
 
 To get started using the kit follow following steps:
 
-##### Repo cloning and setup:
+### Repo Cloning and Setup:
 
 1. Clone the repo and cd to working directory.
 2. `yarn`
 3. `yarn bootstrap`
 
-\* If you have `lerna` installed globally you can the step 2, if not, after running step 2, `lerna` command will available for you via `npx`, just prepend it with `npx` like this `npx lerna --version`
+\* If you have `lerna` installed globally you can skip step 2, if not, after running step 2, `lerna` command will available for you via `npx`, just prepend it with `npx` like this `npx lerna --version`
 
-##### DB setup: (in case you have docker on your system)
+### DB Setup: in case you have docker installed on your system
 
 `cd packages/server && docker-compose up -d`
 
-##### DB setup: (manually)
+### DB Setup: manually
 
 1. `createuser myuser --password;`
 2. `createdb myapp;`
 3. Connect to the DB `psql myapp` and run `grant all privileges on database myapp to myuser;`
 
-##### DB migration:
+### DB Migration:
 
 `lerna run --stream --scope myapp-server migrate-up`
 
-##### Starting development servers:
+### Starting Development Servers:
 
 To start client server in development mode:
 
@@ -38,11 +40,13 @@ To start graphql server in development mode:
 
 `lerna run --stream --scope myapp-server start:watch`
 
-## Libraries used
+
+Libraries used
+-------------
 
 Following libraries / utilities have been used in the repo:
 
-##### Client
+### Client
 
 1. ReactJS: 16.2.0
 2. Typescript: 2.4.2
@@ -54,7 +58,7 @@ Following libraries / utilities have been used in the repo:
 8. enzyme: 2.9.1
 9. prettier: 1.5.3
 
-##### Server
+### Server
 
 1. NodeJS: 7.5.0
 2. Express: 4.15.4
