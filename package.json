@@ -1,6 +1,10 @@
 {
 	"name": "graphql-typescript-starter",
 	"private": true,
+	"scripts": {
+		"bootstrap": "lerna bootstrap",
+		"clean": "lerna clean"
+	},
 	"devDependencies": {
 		"lerna": "^2.5.1"
 	},
